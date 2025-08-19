@@ -1,0 +1,270 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #dcf3f7;
+      overflow-x: hidden;
+
+    }
+
+    header {
+      text-align: center;
+      padding: 10px 0;
+      background: transparent;
+      z-index: 100;
+    }
+
+    header h1 {
+      font-size: 40px;
+      color: black;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    header p {
+      font-size: 16px;
+      color: #333;
+    }
+
+    .menu-toggle {
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      width: 30px;
+      height: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      z-index: 5001;
+    }
+
+    .menu-toggle span {
+      height: 4px;
+      background: #000;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -240px;
+      width: 240px;
+      height: 100vh;
+      background: rgb(56, 179, 228);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: left 0.3s ease;
+      z-index: 4000;
+      color: white;
+      box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .sidebar.show {
+      left: 0;
+    }
+
+    .sidebar-logo {
+      text-align: center;
+      padding: 30px 20px 10px;
+    }
+
+    .sidebar-logo img {
+      width: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .sidebar-logo h2 {
+      font-size: 20px;
+      color: #fff;
+    }
+
+    .sidebar nav {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .sidebar nav a {
+      text-decoration: none;
+      color: white;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px;
+      border-radius: 20px;
+      text-align: center;
+      transition: background 0.3s ease;
+      font-weight: 600;
+    }
+
+    .sidebar nav a:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .sidebar .about {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      opacity: 0.7;
+    }
+
+    .main-content {
+      transition: margin-left 0.3s ease;
+      padding-left: 0;
+    }
+
+    .sidebar.show ~ .main-content {
+      margin-left: 240px;
+    }
+
+    .banner {
+      width: 100%;
+      height: 300px;
+      background-image: url('https://builtin.com/sites/www.builtin.com/files/styles/og/public/2023-05/largest%20software%20companies.jpg');
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      margin: 20px auto;
+    }
+
+    .intro, .services {
+      text-align: center;
+      padding: 20px;
+      font-size: 17px;}
+    .services h2 {
+      margin-bottom: 20px;
+    }
+
+    .service-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      width: 300px;
+      height: 220px;
+      perspective: 1000px;
+      background: transparent;
+      border: none;
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .card-front {
+      background: #44c4b9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    .card-front img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .card-front p {
+      margin-top: 10px;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .card-back {
+      background: #2c9690;
+      color: white;
+      transform: rotateY(180deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    footer {
+      background: #00ACAC;
+      color: white;
+      padding: 40px 20px;
+      border-radius: 5px 5px 0 0;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: none;
+    }
+
+    footer h5 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        width: 90%;
+      }
+
+      .service-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .sidebar {
+        width: 100%;
+        left: -100%;
+        border-radius: 0;
+      }
+
+      .sidebar.show {
+        left: 0;
+      }
+
+      .main-content {
+        margin-left: 0 !important;
+        transform: none !important;
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }

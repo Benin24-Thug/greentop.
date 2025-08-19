@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register Now - GreenTop</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #ccffd6;
+    }
+
+    header {
+      background-color: #b2f2a8;
+      padding: 20px;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .header-title {
+      color: #014d01;
+    }
+
+    .home-btn {
+      text-decoration: none;
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .home-btn:hover {
+      background-color: #388e3c;
+    }
+
+    .banner {
+      width: 100%;
+      height: auto;
+      max-height: 300px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .intro {
+      background-color: #e3ffe5;
+      padding: 20px;
+      text-align: center;
+      color: #014d01;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 600px;
+      margin: 30px auto;
+      background-color: #b2f2a8;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .container h2 {
+      margin-bottom: 20px;
+      color: #014d01;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .row input {
+      flex: 1;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin: 10px 0 5px;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 15px;
+      font-weight: normal;
+      justify-content: flex-start;
+      text-align: left;
+      width: 100%;
+    }
+
+    .checkbox-label input[type="checkbox"] {
+      transform: scale(1.2);
+    }
+
+    .submit-btn {
+      background-color: #014d01;
+      color: white;
+      padding: 12px 20px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #026602;
+    }
+
+    footer {
+      background-color: #a0e6a8;
+      padding: 20px 10px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .footer-links {
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .footer-links a {
+      color: #014d01;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .row {
+        flex-direction: column;
+      }
+
+      .header-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .home-btn {
+        align-self: flex-end;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-top">
+      <div class="header-title">
+        <h1>GreenTop</h1>
+        <p>Information Technology</p>
+      </div>
+      <a class="home-btn" href="index.html">Home</a>
+    </div>
+  </header>
+
+  <img src="https://pix4free.org/assets/library/2021-06-16/originals/internship.jpg" alt="Banner" class="banner">
+
+  <div class="intro">
+    <h2>Join Our Internship Program</h2>
+    <p>Apply now to gain real-world experience with one of the most dynamic IT teams. We welcome innovative, motivated individuals ready to learn and grow with us.</p>
+  </div>
+
+  <div class="container">
+    <h2>Register Now</h2>
+    <form action="save_response.php" method="post" enctype="multipart/form-data">
+      <input type="text" name="firstname" placeholder="First Name" required>
+      <input type="text" name="lastname" placeholder="Surname" required>
+      <input type="email" name="email" placeholder="Email" required>
+
+      <div class="row">
+        <input type="text" name="phone" placeholder="Phone Number" required>
+        <input type="text" name="gender" placeholder="Gender">
+      </div>
+
+      <div class="row">
+        <input type="number" name="age" placeholder="Age">
+        <input type="date" name="dob" placeholder="Date of Birth">
+      </div>
+
+      <textarea name="address" placeholder="Address" rows="3"></textarea>
+
+      <input type="text" name="position" placeholder="Internship Role">
+
+      <select name="projects_done">
+        <option value="">Projects done before</option>
+        <option value="1">1 Project</option>
+        <option value="2-3">2–3 Projects</option>
+        <option value="3+">3+ Projects</option>
+      </select>
+
+      <label>Attach your resume here</label>
+      <input type="file" name="resume">
+
+      <textarea name="reason" placeholder="Why do you want to join us?" rows="4"></textarea>
+
+      <label class="checkbox-label">
+        <input type="checkbox" name="confirm" required>
+        I confirm that the information provided is accurate.
+      </label>
+
+      <input type="submit" value="Submit" class="submit-btn">
+    </form>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="contact.html">Contact Us</a>
+      <a href="about page.html">About Us</a>
+      <a href="feedback.html">Submit Feedback</a>
+      <a href="Helpcenter.html">Help Center</a>
+      <a href="https://maps.app.goo.gl/pNc3zN1x9bBZ6rHy9">GreenTop, Nithiravillai</a>
+    </div>
+    <p>&copy; 2025 GreenTop</p>
+  </footer>
+
+</body>
+</html>
