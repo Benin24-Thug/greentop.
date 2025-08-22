@@ -1,0 +1,118 @@
+html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(to bottom, #e9fdf0, #c8f9da);
+      text-align: center;
+    }
+
+    .content-wrapper {
+      flex: 1;
+      padding: 20px;
+    }
+
+    header {
+      background-color: #026e3f;
+      padding: 20px 0;
+      color: white;
+      border-bottom: 4px solid #00c56e;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 5px;
+      color:white;
+    }
+
+    header h4 {
+      font-weight: 400;
+      margin: 0;
+    }
+
+    h1 {
+      color: #035e35;
+      margin-top: 30px;
+    }
+
+    p {
+      max-width: 900px;
+      margin: 10px auto;
+      line-height: 1.6;
+      font-size: 18px;
+      color: #1e3d29;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      width: 250px;
+      height: 180px;
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+    }
+
+    @media (max-width: 768px) {
+      .gallery img {
+        width: 90%;
+        height: auto;
+      }
+    }
+
+    .top-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #037b4d;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 20px;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+      z-index: 1000;
+    }
+
+    .top-btn:hover {
+      background-color: #025c38;
+    }
+
+    footer {
+      background-color: #035e35;
+      border-radius: 12px 12px 0 0;
+    }
+
+    footer h5 {
+      color: #ffffff;
+    }
+
+    footer a {
+      color: #e0fdf3;
+    }
+
+    footer a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      color: #c9f4e2;
+    }
